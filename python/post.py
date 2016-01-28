@@ -10,7 +10,7 @@ def stallPost(id, active, handicapped):
         })
     headers = {"Content-type": "application/x-www-form-urlencoded",
                "Accept": "text/plain"}
-    conn = httplib.HTTPConnection("lrshit.herokuapp.com", 80)
+    conn = httplib.HTTPConnection("lrbr.herokuapp.com", 80)
     conn.request("POST", "/api/stalls",
                  params, headers)
     response = conn.getresponse()
