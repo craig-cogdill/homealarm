@@ -38,3 +38,28 @@ code {
 .stall-item.unavailable {
   background-color: #FF4747;
 }
+
+.ui-keyboard {
+  background: #A351F4;
+  box-shadow: 11px 11px 35px black;
+  border: 1px black;
+  border-radius: 10px; 
+}
+
+.ui-keyboard-button {
+  /*background: #BFBDC0;*/
+  background: linear-gradient(gray, white, gray);
+  border: 1px solid black;
+  margin: 1px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 11px gray; 
+}
+
+.ui-keyboard-button:active {
+  background: white;
+  border: 1px solid white;
+}
+
+/*.ui-keyboard-C, .ui-keyboard-9, .ui-keyboard-6, .ui-keyboard-3 {
+  margin: 5px;
+}*/

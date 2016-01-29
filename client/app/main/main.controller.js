@@ -22,12 +22,41 @@ var availableSayings = [
 class MainController {
 
   constructor($http, $scope, socket, $location, $state) {
+    var maxLength = 10;
+    var minLength = 6;
     this.$http = $http;
     this.$scope = $scope;
     this.$location = $location;
     this.available = true;
     this.$state = $state;
     this.body = angular.element('body');
+    this.numpad = angular.element("#hex")
+    this.numpad.keyboard({
+      layout: 'custom',
+      customLayout: {
+          'default' : [
+          '1 2 3 A',
+          '4 5 6 B',
+          '7 8 9 C',
+          '* 0 # D',
+          '{bksp} {a} {c}'
+        ]
+      },
+      maxLength: maxLength,
+      // Prevent keys not in the displayed keyboard from being typed in
+      restrictInput : true,
+      // include lower case characters (added v1.25.7)
+      restrictInclude : 'a b c d e f',
+      // don't use combos or A+E could become a ligature
+      useCombos : false,
+      // activate the "validate" callback function
+      acceptValid : true,
+      validate : function(keyboard, value, isClosing){
+        // only make valid if input is 6 characters in length
+        console.log(value);
+        return (value.length >= minLength && value.length <= maxLength);
+      }
+    });
 
     $http.get('/api/stalls').then(response => {
       this.stalls = response.data;

@@ -2,16 +2,17 @@
 
 <div class="container" id="main">
   <div class="row status">
-    <h1><i ng-class="main.available ? 'fa fa-check-circle' : 'fa fa-times-circle'"></i></h1>
+  <h1><i ng-class="main.available ? 'fa fa-check-circle' : 'fa fa-times-circle'"></i></h1>
     <h2>{{main.saying}}</h2>
   </div>
+  <input id="hex" type="text" class="ui-keyboard-input ui-widget-content ui-corner-all ui-keyboard-input-current" aria-haspopup="true" role="textbox">
   <div class="row">
     <div class="col-lg-12">
       <ul class="stall-list">
         <li class="stall-item" ng-class="!stall.active ? '' : 'unavailable'" ng-repeat="stall in main.stalls" ng-click="main.redirect(stall.stallId)">
-          <h1><span class="toilet">🚽 </span>{{stall.handicapped ? "♿" : ""}}</h1>
+          <h1><span class="toilet">🚪 </span>{{stall.handicapped ? "♿" : ""}}</h1>
           <div class="stall-status pull-right">
-            {{!stall.active ? "👍💩🎉💯" : "✋🚫🌚💣"}}
+            {{!stall.active ? "DISARMED" : "ARMED"}}
           </div>
         </li>
       </ul>

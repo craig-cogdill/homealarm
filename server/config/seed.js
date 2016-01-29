@@ -21,9 +21,6 @@ Stall.find({}).removeAsync()
     Stall.createAsync({
       stallId : "1"
    },
-   {
-      stallId: "2"
-   }
 )
     .then(function(thing) {
       console.log(thing);

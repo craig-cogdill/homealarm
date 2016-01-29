@@ -16,7 +16,8 @@
     "angular-ui-router": "~0.2.15",
     "angular-validation-match": "~1.5.2",
     "angular-nvd3": "*",
-    "moment" : "*"
+    "moment" : "*",
+    "keyboard" : "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.0"
